@@ -25,7 +25,7 @@ router.post('/category/create', async (req, res) => {
     await category.save()
     return res.json({ message: 'Category created' })
   } catch (error) {
-    return res.json(error.message)
+    return res.json({ message: error.message })
   }
 })
 
@@ -42,7 +42,7 @@ router.get('/category', async (req, res) => {
     const categories = await Category.find().populate('department')
     return res.json(categories)
   } catch (error) {
-    return res.status(400).json(error.message)
+    return res.status(400).json({ message: error.message })
   }
 })
 
@@ -65,7 +65,7 @@ router.post('/category/update', async (req, res) => {
     await category.save()
     return res.json({ message: 'Category updated' })
   } catch (error) {
-    return res.json(error.message)
+    return res.json({ message: error.message })
   }
 })
 
@@ -89,7 +89,7 @@ router.post('/category/delete', async (req, res) => {
       return res.status(400).json({ message: 'Category not found' })
     }
   } catch (error) {
-    return res.json(error.message)
+    return res.json({ message: error.message })
   }
 })
 

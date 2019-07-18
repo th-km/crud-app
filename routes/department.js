@@ -23,7 +23,7 @@ router.post('/department/create', async (req, res) => {
     await department.save()
     return res.json({ message: 'Department created' })
   } catch (error) {
-    return res.status(400).json(error.message)
+    return res.status(400).json({ message: error.message })
   }
 })
 
@@ -40,7 +40,7 @@ router.get('/department', async (req, res) => {
     const departments = await Department.find()
     return res.json(departments)
   } catch (error) {
-    return res.status(400).json(error.message)
+    return res.status(400).json({ message: error.message })
   }
 })
 
@@ -66,7 +66,7 @@ router.post('/department/update', async (req, res) => {
       return res.status(400).json({ message: 'Department not found' })
     }
   } catch (error) {
-    return res.json(error.message)
+    return res.json({ message: error.message })
   }
 })
 
@@ -91,7 +91,7 @@ router.post('/department/delete', async (req, res) => {
       return res.status(400).json({ message: 'Department not found' })
     }
   } catch (error) {
-    return res.json(error.message)
+    return res.json({ message: error.message })
   }
 })
 
