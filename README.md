@@ -1,3 +1,6 @@
 # crud-app
 
-## Heroku, MongoDB and mLab
+## Overview
+- Heroku
+- MongoDB
+- mLab
